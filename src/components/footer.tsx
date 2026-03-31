@@ -46,17 +46,17 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-accent" />
-                <a href="tel:+18325551234" className="hover:text-accent transition-colors">
-                  (832) 555-1234
+                <a href="tel:+17135172039" className="hover:text-accent transition-colors">
+                  (713) 517-2039
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-accent" />
                 <a
-                  href="mailto:info@fuquafinishes.com"
+                  href="mailto:trey.fuqua@trubath.com"
                   className="hover:text-accent transition-colors"
                 >
-                  info@fuquafinishes.com
+                  trey.fuqua@trubath.com
                 </a>
               </li>
               <li className="flex items-start gap-2">

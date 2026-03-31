@@ -169,7 +169,7 @@ export function LandingHero() {
             transition={{ duration: 0.2, ease: "easeOut", delay: 0.8 }}
           >
             <a
-              href="tel:+18325551234"
+              href="tel:+17135172039"
               className="inline-flex items-center gap-2 sm:text-base md:text-lg font-semibold tracking-tight text-white bg-primary hover:bg-primary-dark px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-3.5 rounded-full z-20 shadow-2xl transition-colors"
             >
               <Phone className="w-4 h-4" />

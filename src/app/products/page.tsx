@@ -50,23 +50,27 @@ const trubathProducts = [
 const colorOptions = [
   {
     name: "Calacatta Oro",
+    description: "Warm white marble with elegant gold veining",
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618220252344-8ec99ec65b75?q=80&w=400&auto=format&fit=crop",
   },
   {
     name: "White Onyx Alabaster",
+    description: "Soft white with subtle translucent veining",
     image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1629196914168-3a2652305f9f?q=80&w=400&auto=format&fit=crop",
   },
   {
     name: "Avorio Limestone",
+    description: "Warm ivory tone with gentle natural texture",
     image:
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607688960-e095ff83135c?q=80&w=400&auto=format&fit=crop",
   },
   {
     name: "Statuario Leonardo",
+    description: "Bright white with dramatic grey veining",
     image:
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7c5a38?q=80&w=400&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1555448248-2571daf6344b?q=80&w=400&auto=format&fit=crop",
   },
 ]
 

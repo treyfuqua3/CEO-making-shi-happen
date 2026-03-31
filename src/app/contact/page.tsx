@@ -179,10 +179,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-primary">Phone</h3>
                     <a
-                      href="tel:+18325551234"
+                      href="tel:+17135172039"
                       className="text-muted-foreground hover:text-accent transition-colors"
                     >
-                      (832) 555-1234
+                      (713) 517-2039
                     </a>
                   </div>
                 </div>
@@ -194,10 +194,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-primary">Email</h3>
                     <a
-                      href="mailto:info@fuquafinishes.com"
+                      href="mailto:trey.fuqua@trubath.com"
                       className="text-muted-foreground hover:text-accent transition-colors"
                     >
-                      info@fuquafinishes.com
+                      trey.fuqua@trubath.com
                     </a>
                   </div>
                 </div>
@@ -240,11 +240,11 @@ export default function ContactPage() {
                   Call Fuqua Finishes LLC directly for immediate assistance.
                 </p>
                 <a
-                  href="tel:+18325551234"
+                  href="tel:+17135172039"
                   className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Call (832) 555-1234
+                  Call (713) 517-2039
                 </a>
               </div>
             </div>

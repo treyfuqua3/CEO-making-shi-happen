@@ -231,10 +231,10 @@ export default function Home() {
               Request a Quote
             </Link>
             <a
-              href="tel:+18325551234"
+              href="tel:+17135172039"
               className="inline-block border-2 border-white/30 hover:border-white text-white px-8 py-3.5 rounded-lg font-semibold transition-colors"
             >
-              Call (832) 555-1234
+              Call (713) 517-2039
             </a>
           </div>
         </div>
