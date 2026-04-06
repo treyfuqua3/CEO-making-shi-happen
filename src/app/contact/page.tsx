@@ -158,7 +158,7 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-dark text-white px-6 py-3.5 rounded-lg font-semibold transition-colors"
+                    className="w-full bg-accent hover:bg-accent-dark text-primary font-bold px-6 py-3.5 rounded-lg font-semibold transition-colors"
                   >
                     Submit Request
                   </button>
@@ -241,7 +241,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href="tel:+17135172039"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-primary font-bold px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   Call (713) 517-2039

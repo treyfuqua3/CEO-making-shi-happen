@@ -55,7 +55,7 @@ export function Navbar() {
             </a>
             <Link
               href="/contact"
-              className="bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+              className="bg-accent hover:bg-accent-dark text-primary px-5 py-2.5 rounded-lg text-sm font-bold transition-colors"
             >
               Request a Quote
             </Link>
@@ -112,7 +112,7 @@ export function Navbar() {
               </a>
               <Link
                 href="/contact"
-                className="block text-center bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+                className="block text-center bg-accent hover:bg-accent-dark text-primary px-5 py-2.5 rounded-lg text-sm font-bold transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Request a Quote

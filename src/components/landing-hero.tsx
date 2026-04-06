@@ -158,7 +158,7 @@ export function LandingHero() {
           >
             <Link
               href="/contact"
-              className="inline-block sm:text-base md:text-lg font-semibold tracking-tight text-white bg-accent hover:bg-accent-dark px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-3.5 rounded-full z-20 shadow-2xl transition-colors"
+              className="inline-block sm:text-base md:text-lg font-bold tracking-tight text-primary bg-accent hover:bg-accent-dark px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-3.5 rounded-full z-20 shadow-2xl transition-colors"
             >
               Request a Quote
             </Link>

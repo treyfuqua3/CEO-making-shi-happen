@@ -96,7 +96,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TruBath Featured Section */}
+      {/* TRUbath Featured Section */}
       <section className="py-16 md:py-24 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -105,10 +105,10 @@ export default function Home() {
                 Featured Partner Brand
               </p>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-6">
-                TruBath Porcelain Systems
+                TRUbath Porcelain Systems
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Fuqua Finishes LLC proudly supplies TruBath &mdash; a patented
+                Fuqua Finishes LLC proudly supplies TRUbath &mdash; a patented
                 16mm porcelain wall panel system engineered for faster
                 installation, easier handling, and exceptional durability.
                 Beautiful, durable bathrooms installed in about a day.
@@ -141,7 +141,7 @@ export default function Home() {
             <div className="relative">
               <Image
                 src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop"
-                alt="Modern porcelain bathroom showcasing TruBath materials"
+                alt="Modern porcelain bathroom showcasing TRUbath materials"
                 width={600}
                 height={500}
                 className="rounded-2xl shadow-2xl object-cover w-full h-[400px] md:h-[500px]"
@@ -162,29 +162,29 @@ export default function Home() {
             The Complete Porcelain Bathroom Experience
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-12">
-            Complete the look from wall to floor with matching TruBath components,
+            Complete the look from wall to floor with matching TRUbath components,
             available through Fuqua Finishes LLC.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                name: "TruPan Shower Base",
-                desc: "Matching porcelain shower base",
+                name: "TRUpan Shower Base",
+                desc: "59¾\" x 32\" porcelain base with left, right, or center drain options",
                 img: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=400&auto=format&fit=crop",
               },
               {
-                name: "TruNiche Shelves & Storage",
-                desc: "Matching linear shelves and recessed niches",
+                name: "TRUniche Shelves & Storage",
+                desc: "Color-matched recessed niches and linear shelves",
                 img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400&auto=format&fit=crop",
               },
               {
-                name: "TruTops Vanities & Sinks",
-                desc: "Porcelain vanities, integrated sinks, and countertops",
+                name: "TRUtops Vanities & Sinks",
+                desc: "Integrated, undermount, or vessel sink options in all 4 colors",
                 img: "https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?q=80&w=400&auto=format&fit=crop",
               },
               {
-                name: "TruFloor Tiles",
-                desc: 'Coordinating 12"x24" floor tiles',
+                name: "TRUfloor Full Slabs",
+                desc: "126\" x 63\" porcelain floor slabs in all 4 designer colors",
                 img: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?q=80&w=400&auto=format&fit=crop",
               },
             ].map((product) => (
@@ -220,13 +220,13 @@ export default function Home() {
             Ready to Start Your Next Project?
           </h2>
           <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-            Get in touch with Fuqua Finishes LLC for a quote on premium TruBath
+            Get in touch with Fuqua Finishes LLC for a quote on premium TRUbath
             materials and building finishes for your Houston area project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-3.5 rounded-lg font-semibold transition-colors"
+              className="inline-block bg-accent hover:bg-accent-dark text-primary px-8 py-3.5 rounded-lg font-bold transition-colors"
             >
               Request a Quote
             </Link>
