@@ -1,15 +1,41 @@
 "use client"
 
 import { useState, FormEvent } from "react"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Loader2 } from "lucide-react"
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // In production, this would send to an API endpoint
-    setSubmitted(true)
+    setLoading(true)
+    setError("")
+
+    const formData = new FormData(e.currentTarget)
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "")
+    formData.append("subject", "New Quote Request — Fuqua Finishes LLC Website")
+    formData.append("from_name", "Fuqua Finishes Website")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitted(true)
+      } else {
+        setError("Something went wrong. Please try again or call us directly.")
+      }
+    } catch {
+      setError("Something went wrong. Please try again or call us directly.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -48,6 +74,10 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Hidden fields for Web3Forms */}
+                  <input type="hidden" name="to" value="trey.fuqua@trubath.com" />
+                  <input type="checkbox" name="botcheck" className="hidden" />
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label
@@ -126,17 +156,17 @@ export default function ContactPage() {
                     </label>
                     <select
                       id="projectType"
-                      name="projectType"
+                      name="Project Type"
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors bg-white"
                     >
                       <option value="">Select a project type</option>
-                      <option value="residential-remodel">
+                      <option value="Residential Remodel">
                         Residential Remodel
                       </option>
-                      <option value="new-construction">New Construction</option>
-                      <option value="commercial">Commercial Project</option>
-                      <option value="multi-family">Multi-Family / HOA</option>
-                      <option value="other">Other</option>
+                      <option value="New Construction">New Construction</option>
+                      <option value="Commercial Project">Commercial Project</option>
+                      <option value="Multi-Family / HOA">Multi-Family / HOA</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
 
@@ -156,11 +186,23 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-red-600 text-sm">{error}</p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-dark text-primary font-bold px-6 py-3.5 rounded-lg font-semibold transition-colors"
+                    disabled={loading}
+                    className="w-full bg-accent hover:bg-accent-dark text-primary font-bold px-6 py-3.5 rounded-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    Submit Request
+                    {loading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      "Submit Request"
+                    )}
                   </button>
                 </form>
               )}
@@ -241,7 +283,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href="tel:+17135172039"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-primary font-bold px-6 py-3 rounded-lg font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-primary font-bold px-6 py-3 rounded-lg transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   Call (713) 517-2039
