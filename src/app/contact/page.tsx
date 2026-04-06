@@ -14,19 +14,25 @@ export default function ContactPage() {
     setError("")
 
     const formData = new FormData(e.currentTarget)
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "")
-    formData.append("subject", "New Quote Request — Fuqua Finishes LLC Website")
-    formData.append("from_name", "Fuqua Finishes Website")
+    const data = {
+      name: formData.get("name"),
+      company: formData.get("company"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      projectType: formData.get("Project Type"),
+      message: formData.get("message"),
+    }
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       })
 
-      const data = await response.json()
+      const result = await response.json()
 
-      if (data.success) {
+      if (result.success) {
         setSubmitted(true)
       } else {
         setError("Something went wrong. Please try again or call us directly.")
@@ -74,10 +80,6 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  {/* Hidden fields for Web3Forms */}
-                  <input type="hidden" name="to" value="trey.fuqua@trubath.com" />
-                  <input type="checkbox" name="botcheck" className="hidden" />
-
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label
