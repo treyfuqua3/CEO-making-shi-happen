@@ -108,7 +108,7 @@ export function LandingHero() {
         </FloatingElement>
       </Floating>
 
-      <div className="flex flex-col justify-center items-center w-[300px] sm:w-[440px] md:w-[600px] lg:w-[820px] z-50 pointer-events-auto">
+      <div className="flex flex-col justify-center items-center w-[300px] sm:w-[440px] md:w-[600px] lg:w-[820px] z-10 pointer-events-auto">
         <motion.div
           className="flex items-center gap-3 mb-6"
           animate={{ opacity: 1, y: 0 }}

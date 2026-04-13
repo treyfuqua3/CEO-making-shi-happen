@@ -11,15 +11,10 @@ import {
 } from "@/data/porcelain-finishes"
 
 type PorcelainFinishesProps = {
-  /** Optional override for the eyebrow label */
   eyebrow?: string
-  /** Optional override for the main heading */
   heading?: string
-  /** Optional override for the supporting copy */
   subheading?: string
-  /** Show the final CTA row (defaults to true) */
   showCTA?: boolean
-  /** Background treatment (defaults to "ivory") */
   background?: "ivory" | "white" | "stone"
 }
 
@@ -30,21 +25,161 @@ const backgroundStyles: Record<NonNullable<PorcelainFinishesProps["background"]>
 }
 
 /**
- * Builds a layered CSS background that reads as a realistic marble swatch.
- * The stops are derived from the finish's `swatch` palette so Statuario reads
- * as white-with-grey-veining and Calacatta reads as cream-with-gold.
+ * Layered CSS background that reads as realistic marble/stone surface.
  */
 function swatchBackground(swatch: FinishSwatch): string {
   return [
-    // subtle directional veining
     `radial-gradient(ellipse 60% 25% at 18% 22%, ${swatch.vein}33 0%, transparent 55%)`,
     `radial-gradient(ellipse 45% 15% at 70% 65%, ${swatch.vein}40 0%, transparent 60%)`,
     `radial-gradient(ellipse 35% 10% at 80% 20%, ${swatch.vein}26 0%, transparent 55%)`,
-    // highlight sheen
     `radial-gradient(ellipse 80% 70% at 30% 15%, ${swatch.highlight}AA 0%, transparent 70%)`,
-    // base gradient
     `linear-gradient(135deg, ${swatch.highlight} 0%, ${swatch.base} 45%, ${swatch.mid} 100%)`,
   ].join(", ")
+}
+
+/**
+ * Extended marble background with more dramatic veining for larger panels.
+ */
+function sceneWallBackground(swatch: FinishSwatch): string {
+  return [
+    // More pronounced veining for the larger panel
+    `radial-gradient(ellipse 70% 20% at 12% 18%, ${swatch.vein}3D 0%, transparent 50%)`,
+    `radial-gradient(ellipse 50% 12% at 55% 70%, ${swatch.vein}35 0%, transparent 55%)`,
+    `radial-gradient(ellipse 40% 18% at 82% 25%, ${swatch.vein}2E 0%, transparent 50%)`,
+    `radial-gradient(ellipse 30% 8% at 35% 50%, ${swatch.vein}28 0%, transparent 45%)`,
+    `radial-gradient(ellipse 55% 15% at 65% 40%, ${swatch.vein}1F 0%, transparent 55%)`,
+    // Sheen highlights
+    `radial-gradient(ellipse 90% 60% at 25% 10%, ${swatch.highlight}88 0%, transparent 65%)`,
+    `radial-gradient(ellipse 70% 50% at 75% 85%, ${swatch.highlight}55 0%, transparent 60%)`,
+    // Base
+    `linear-gradient(155deg, ${swatch.highlight} 0%, ${swatch.base} 35%, ${swatch.mid} 70%, ${swatch.base} 100%)`,
+  ].join(", ")
+}
+
+/**
+ * A CSS-rendered bathroom scene mockup showing the porcelain finish
+ * applied to a walk-in shower wall. Conveys material tone, brightness,
+ * veining, and overall aesthetic without requiring an external image.
+ */
+function BathroomScene({ swatch, name }: { swatch: FinishSwatch | null; name: string }) {
+  const wallBg = swatch
+    ? sceneWallBackground(swatch)
+    : "repeating-linear-gradient(45deg, #E8E4DB 0 10px, #F4F2ED 10px 20px)"
+  const floorBg = swatch
+    ? `linear-gradient(180deg, ${swatch.mid}CC 0%, ${swatch.mid} 100%)`
+    : "#D4CEC0"
+  const nicheBg = swatch
+    ? `linear-gradient(180deg, ${swatch.mid} 0%, ${swatch.base} 100%)`
+    : "#E8E4DB"
+
+  return (
+    <div
+      className="relative w-full overflow-hidden rounded-2xl ring-1 ring-stone-200/80"
+      style={{ aspectRatio: "4 / 3" }}
+      aria-label={`${name} applied to a modern shower scene`}
+    >
+      {/* Wall surface — the primary visual */}
+      <div
+        className="marble-sheen absolute inset-0"
+        style={{ background: wallBg }}
+      />
+
+      {/* Floor surface — darker tone */}
+      <div
+        className="absolute bottom-0 left-0 right-0"
+        style={{
+          height: "22%",
+          background: floorBg,
+          borderTop: `1px solid ${swatch ? swatch.vein + "18" : "#C0B8A8"}`,
+        }}
+      />
+
+      {/* Recessed niche / shelf detail */}
+      <div
+        className="absolute rounded-sm shadow-inner"
+        style={{
+          top: "18%",
+          right: "16%",
+          width: "28%",
+          height: "22%",
+          background: nicheBg,
+          boxShadow: `inset 2px 2px 8px ${swatch ? swatch.vein + "22" : "rgba(0,0,0,0.08)"},
+                       inset -1px -1px 4px ${swatch ? swatch.highlight + "44" : "rgba(255,255,255,0.2)"}`,
+          borderRadius: "4px",
+        }}
+      />
+
+      {/* Thin niche shelf line */}
+      <div
+        className="absolute"
+        style={{
+          top: "28%",
+          right: "16%",
+          width: "28%",
+          height: "1px",
+          background: swatch ? swatch.vein + "22" : "#B0A898",
+        }}
+      />
+
+      {/* Shower fixture silhouette */}
+      <div className="absolute" style={{ top: "6%", left: "40%" }}>
+        {/* Arm */}
+        <div
+          className="rounded-full"
+          style={{
+            width: "3px",
+            height: "28px",
+            background: "#9CA3AF80",
+          }}
+        />
+        {/* Head */}
+        <div
+          className="rounded-full -ml-[5px]"
+          style={{
+            width: "13px",
+            height: "13px",
+            background: "#9CA3AF60",
+            border: "1px solid #9CA3AF40",
+          }}
+        />
+      </div>
+
+      {/* Glass panel line */}
+      <div
+        className="absolute"
+        style={{
+          top: 0,
+          bottom: "22%",
+          left: "72%",
+          width: "1px",
+          background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.5) 20%, rgba(255,255,255,0.35) 80%, transparent 100%)",
+        }}
+      />
+
+      {/* Drain detail on floor */}
+      <div
+        className="absolute rounded-full"
+        style={{
+          bottom: "8%",
+          left: "45%",
+          width: "10px",
+          height: "10px",
+          background: "#9CA3AF30",
+          border: "1px solid #9CA3AF20",
+        }}
+      />
+
+      {/* Subtle ambient shadow at bottom of wall */}
+      <div
+        className="absolute left-0 right-0 pointer-events-none"
+        style={{
+          bottom: "22%",
+          height: "8%",
+          background: "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.04) 100%)",
+        }}
+      />
+    </div>
+  )
 }
 
 function FinishCard({
@@ -62,7 +197,7 @@ function FinishCard({
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
       className="group relative flex flex-col overflow-hidden rounded-[28px] bg-white shadow-luxury ring-1 ring-stone-200/60 transition-all duration-500 hover:-translate-y-1 hover:shadow-luxury-lg"
     >
-      {/* Photorealistic bathroom application */}
+      {/* Photorealistic bathroom mockup image */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone-100">
         <Image
           src={finish.mockupImage}
@@ -71,10 +206,9 @@ function FinishCard({
           height={1000}
           className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
         />
-        {/* Dark-to-transparent gradient for legible badges */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/10" />
 
-        {/* Finish-type badge */}
+        {/* Finish type badge */}
         <div className="absolute left-4 top-4">
           <span className="eyebrow inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[0.65rem] text-stone-700 backdrop-blur-sm ring-1 ring-white/70">
             <span
@@ -93,13 +227,11 @@ function FinishCard({
           </span>
         </div>
 
-        {/* Application caption */}
+        {/* Application caption + swatch chip */}
         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
           <span className="eyebrow text-[0.65rem] text-white/85">
             {finish.application}
           </span>
-
-          {/* Swatch chip over the photo */}
           <div
             className="marble-sheen relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-white/90 shadow-lg"
             style={
@@ -115,7 +247,7 @@ function FinishCard({
         </div>
       </div>
 
-      {/* Info block */}
+      {/* Card info block */}
       <div className="flex flex-1 flex-col gap-4 p-6 md:p-7">
         <div>
           <h3 className="font-display text-2xl font-medium tracking-tight text-stone-900 md:text-[1.75rem]">
@@ -124,9 +256,12 @@ function FinishCard({
           <p className="mt-1 text-sm italic text-stone-500">{finish.tagline}</p>
         </div>
 
-        {/* Larger rectangular swatch (the "elegant swatch tile") */}
+        {/* CSS bathroom scene mockup — shows the finish on a shower wall */}
+        <BathroomScene swatch={finish.swatch} name={finish.name} />
+
+        {/* Rectangular swatch tile */}
         <div
-          className="marble-sheen relative h-20 w-full overflow-hidden rounded-xl ring-1 ring-stone-200"
+          className="marble-sheen relative h-16 w-full overflow-hidden rounded-xl ring-1 ring-stone-200"
           style={
             finish.swatch
               ? { background: swatchBackground(finish.swatch) }
