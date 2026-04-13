@@ -3,6 +3,29 @@
 import { useState, FormEvent } from "react"
 import { Phone, Mail, MapPin, Clock, Loader2 } from "lucide-react"
 
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  )
+}
+
+// LinkedIn placeholder — verify with Trey before launch
+const LINKEDIN_URL = "https://www.linkedin.com/in/trey-fuqua-22931a236"
+const LINKEDIN_DISPLAY = "www.linkedin.com/in/trey-fuqua-22931a236"
+
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -47,25 +70,42 @@ export default function ContactPage() {
   return (
     <main className="pt-20">
       {/* Hero */}
-      <section className="bg-primary py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Contact Fuqua Finishes LLC
+      <section className="relative bg-stone-900 py-24 md:py-32 overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse at center, rgba(216,201,163,0.6) 0%, transparent 60%)",
+          }}
+          aria-hidden
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <span className="luxury-divider text-champagne-dark" aria-hidden />
+            <span className="eyebrow text-champagne">Get in Touch</span>
+            <span className="luxury-divider text-champagne-dark" aria-hidden />
+          </div>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-light tracking-tight text-white leading-[1.02]">
+            Contact
           </h1>
-          <p className="text-gray-300 max-w-2xl mx-auto">
+          <p className="mt-6 text-stone-300 max-w-2xl mx-auto leading-relaxed md:text-lg">
             Ready to get started? Request a quote or reach out with questions.
             Our Houston-based team is here to help.
           </p>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-6">
-                Request a Quote
+              <div className="flex items-center gap-3 mb-5">
+                <span className="luxury-divider text-stone-400" aria-hidden />
+                <span className="eyebrow text-stone-500">Quote Request</span>
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-light tracking-tight text-stone-900 mb-8 leading-[1.05]">
+                Tell us about your project.
               </h2>
 
               {submitted ? (
@@ -212,8 +252,12 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-6">
-                Get in Touch
+              <div className="flex items-center gap-3 mb-5">
+                <span className="luxury-divider text-stone-400" aria-hidden />
+                <span className="eyebrow text-stone-500">Direct Contact</span>
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl font-light tracking-tight text-stone-900 mb-8 leading-[1.05]">
+                Reach out directly.
               </h2>
               <div className="space-y-6 mb-10">
                 <div className="flex items-start gap-4">
@@ -273,21 +317,41 @@ export default function ContactPage() {
                     <p className="text-muted-foreground">Sunday: Closed</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <LinkedInIcon className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-primary">LinkedIn</h3>
+                    <a
+                      href={LINKEDIN_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-accent transition-colors break-all"
+                    >
+                      {LINKEDIN_DISPLAY}
+                    </a>
+                    <p className="text-xs text-muted-foreground/70 mt-1">
+                      Connect with Trey Fuqua
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Call CTA */}
-              <div className="bg-primary rounded-2xl p-8 text-center">
-                <h3 className="text-xl font-bold text-white mb-2">
+              <div className="bg-stone-900 rounded-3xl p-8 text-center ring-1 ring-stone-800">
+                <h3 className="font-display text-2xl text-white mb-3">
                   Prefer to Talk?
                 </h3>
-                <p className="text-gray-300 mb-4 text-sm">
+                <p className="text-stone-300 mb-6 text-sm leading-relaxed">
                   Call Fuqua Finishes LLC directly for immediate assistance.
                 </p>
                 <a
                   href="tel:+17135172039"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-primary font-bold px-6 py-3 rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent hover:bg-accent-light text-primary font-bold px-6 py-3.5 text-xs uppercase tracking-[0.18em] transition-all duration-300"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-3.5 h-3.5" />
                   Call (713) 517-2039
                 </a>
               </div>

@@ -31,7 +31,11 @@ const heroImages = [
 
 export function LandingHero() {
   return (
-    <section className="w-full h-screen overflow-hidden flex flex-col items-center justify-center relative bg-muted">
+    <section className="w-full h-screen overflow-hidden flex flex-col items-center justify-center relative bg-ivory">
+      <div
+        className="pointer-events-none absolute inset-0 bg-luxury-radial"
+        aria-hidden
+      />
       <Floating sensitivity={-0.5} className="h-full">
         <FloatingElement
           depth={0.5}
@@ -104,19 +108,32 @@ export function LandingHero() {
         </FloatingElement>
       </Floating>
 
-      <div className="flex flex-col justify-center items-center w-[280px] sm:w-[400px] md:w-[550px] lg:w-[750px] z-50 pointer-events-auto">
+      <div className="flex flex-col justify-center items-center w-[300px] sm:w-[440px] md:w-[600px] lg:w-[820px] z-50 pointer-events-auto">
+        <motion.div
+          className="flex items-center gap-3 mb-6"
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 10 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
+        >
+          <span className="luxury-divider text-stone-400" aria-hidden />
+          <span className="eyebrow text-stone-500">
+            Houston &middot; Architectural Finishes
+          </span>
+          <span className="luxury-divider text-stone-400" aria-hidden />
+        </motion.div>
+
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-center w-full justify-center items-center flex-col flex whitespace-pre leading-tight tracking-tight space-y-1 md:space-y-4 font-bold"
+          className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] text-center w-full justify-center items-center flex-col flex whitespace-pre leading-[1.02] tracking-tight space-y-0 md:space-y-2 font-light"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 0.3 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
         >
-          <span className="text-primary">Premium Finishes.</span>
+          <span className="text-stone-900">Premium Finishes.</span>
           <LayoutGroup>
             <motion.span layout className="flex whitespace-pre items-center">
               <motion.span
                 layout
-                className="flex whitespace-pre text-primary"
+                className="flex whitespace-pre text-stone-900 italic"
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
               >
                 Delivered{" "}
@@ -130,7 +147,7 @@ export function LandingHero() {
                   "Reliably",
                   "On Time",
                 ]}
-                mainClassName="overflow-hidden pr-3 text-accent py-0 pb-2 md:pb-4 rounded-xl"
+                mainClassName="overflow-hidden pr-3 text-primary py-0 pb-2 md:pb-4 rounded-xl italic"
                 staggerDuration={0.03}
                 staggerFrom="last"
                 rotationInterval={3000}
@@ -141,24 +158,25 @@ export function LandingHero() {
         </motion.h1>
 
         <motion.p
-          className="text-sm sm:text-base md:text-lg lg:text-xl text-center text-muted-foreground pt-4 sm:pt-6 md:pt-8 max-w-lg"
+          className="text-sm sm:text-base md:text-lg text-center text-stone-600 pt-6 sm:pt-8 md:pt-10 max-w-xl leading-relaxed"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.2, ease: "easeOut", delay: 0.5 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.5 }}
         >
-          Fuqua Finishes LLC is Houston&apos;s trusted source for quality building
-          materials &mdash; featuring TruBath porcelain systems and more.
+          Fuqua Finishes LLC is Houston&apos;s trusted source for architectural
+          building materials &mdash; featuring TRUbath porcelain systems and a
+          curated collection of designer finishes.
         </motion.p>
 
-        <div className="flex flex-row justify-center space-x-4 items-center mt-8 sm:mt-12 md:mt-16 text-xs">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 items-center mt-10 sm:mt-12 md:mt-14">
           <motion.div
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.2, ease: "easeOut", delay: 0.7 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: 0.7 }}
           >
             <Link
               href="/contact"
-              className="inline-block sm:text-base md:text-lg font-bold tracking-tight text-primary bg-accent hover:bg-accent-dark px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-3.5 rounded-full z-20 shadow-2xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary hover:bg-primary-light text-white px-8 py-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] shadow-luxury hover:shadow-luxury-lg transition-all duration-300"
             >
               Request a Quote
             </Link>
@@ -166,13 +184,13 @@ export function LandingHero() {
           <motion.div
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.2, ease: "easeOut", delay: 0.8 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: 0.8 }}
           >
             <a
               href="tel:+17135172039"
-              className="inline-flex items-center gap-2 sm:text-base md:text-lg font-semibold tracking-tight text-white bg-primary hover:bg-primary-dark px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-3.5 rounded-full z-20 shadow-2xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-900/20 hover:border-stone-900 text-stone-900 bg-white/70 backdrop-blur-sm px-8 py-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] transition-all duration-300"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-3.5 h-3.5" />
               Call Now
             </a>
           </motion.div>

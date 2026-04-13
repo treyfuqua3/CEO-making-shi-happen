@@ -4,22 +4,69 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1C1917;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer base {
   * {
     @apply border-gray-200;
   }
+
+  /* Premium display styling for major headings */
+  .font-display {
+    font-feature-settings: "ss01", "ss02", "liga", "kern";
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Thin horizontal divider accent line used across luxury sections */
+  .luxury-divider {
+    display: inline-block;
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      currentColor 50%,
+      transparent 100%
+    );
+  }
+
+  /* Subtle marble sheen overlay that can be placed over swatch cards */
+  .marble-sheen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.45) 0%,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.25) 55%,
+      rgba(255, 255, 255, 0) 80%
+    );
+    pointer-events: none;
+  }
+
+  /* Uppercase luxury eyebrow label */
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    font-weight: 600;
   }
 }
