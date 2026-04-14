@@ -22,6 +22,7 @@ export type FinishCategory =
   | "Calacatta Marble"
   | "Limestone"
   | "Onyx"
+  | "Alabaster"
   | "Custom"
 
 export type FinishSwatch = {
@@ -100,42 +101,47 @@ export const porcelainFinishes: PorcelainFinish[] = [
     featured: true,
   },
   {
-    id: "avorio-limestone",
-    name: "Avorio Limestone",
-    shortName: "Avorio",
-    tagline: "Warm ivory limestone with a soft matte touch",
+    id: "lims-ivory",
+    name: "Lims Ivory",
+    shortName: "Lims",
+    tagline: "Warm ivory limestone with a soft sand texture",
     description:
-      "Textured ivory porcelain that reads as quarried limestone. Its uniform warm tone and matte surface create a calm, spa-like envelope for full bathroom installations.",
+      "A quarry-inspired porcelain in a warm ivory tone reading as natural limestone. Subtle organic texture and a sand-kissed surface create a calm, spa-like envelope that pairs beautifully with natural woods and brushed metals.",
     finishType: "Matte",
     category: "Limestone",
     swatch: {
-      base: "#DDC9A1",
-      mid: "#CAB489",
-      vein: "#9E8555",
-      highlight: "#EADBB8",
+      base: "#E6D6B5",
+      mid: "#D4C29A",
+      vein: "#A88A5A",
+      highlight: "#F1E4C8",
     },
     mockupImage:
       "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop",
     mockupAlt:
-      "Spa bathroom with Avorio Limestone porcelain walls in a warm ivory matte finish",
+      "Spa bathroom finished in Lims Ivory porcelain with a warm sand-toned matte surface",
     application: "Full Bathroom",
     featured: true,
   },
   {
-    id: "custom-finish-placeholder",
-    name: "Additional Finish",
-    shortName: "Coming Soon",
-    tagline: "Fourth designer finish — colorway to be confirmed",
+    id: "onyx-white-alabaster",
+    name: "Onyx White Alabaster",
+    shortName: "Alabaster",
+    tagline: "Soft icy white with translucent crystalline movement",
     description:
-      "An additional TRUbath designer colorway is part of the product line. Exact color data for this finish has not been supplied yet — get in touch to confirm availability and specification.",
-    finishType: "Custom",
-    category: "Custom",
-    swatch: null,
+      "A luminous alabaster-inspired porcelain with delicate cool-white veining and a crystalline sheen. Reads almost translucent in natural light, bringing a refined, jewel-like quality to feature walls, vanities, and walk-in showers.",
+    finishType: "Polished",
+    category: "Alabaster",
+    swatch: {
+      base: "#F1EFEB",
+      mid: "#E3E1DC",
+      vein: "#B9BEC4",
+      highlight: "#FBFAF7",
+    },
     mockupImage:
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1200&auto=format&fit=crop&sat=-40&bri=5",
     mockupAlt:
-      "Minimal modern bathroom placeholder — exact finish to be confirmed",
-    application: "Request Sample",
-    isPlaceholder: true,
+      "Luxurious feature wall finished in Onyx White Alabaster porcelain with a crystalline cool-white sheen",
+    application: "Feature Wall",
+    featured: true,
   },
 ]
