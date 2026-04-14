@@ -22,11 +22,6 @@ export const metadata: Metadata = {
     "Fuqua Finishes LLC is Houston's premier materials supplier for contractors, builders, and homeowners. Featuring TRUbath porcelain systems and a curated collection of designer finishes.",
   keywords:
     "Fuqua Finishes LLC, Houston materials supplier, TRUbath materials, porcelain finishes Houston, contractor material supplier Houston, building finishes Houston, Statuario Leonardo, Calacatta Oro, Lims Ivory, Onyx White Alabaster",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
   openGraph: {
     type: "website",
     url: "https://www.fuquafinishes.com",

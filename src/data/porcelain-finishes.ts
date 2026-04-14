@@ -4,12 +4,12 @@
  * This file is the single source of truth for every porcelain finish rendered
  * on the site. To add a new finish, append an entry to `porcelainFinishes`.
  *
- * Color notes:
- *   - `swatch` values are derived directly from the product photography the
- *     client provided for Statuario Leonardo, Calacatta Oro and Avorio
- *     Limestone. They are intentionally expressed as multi-stop gradient
- *     parameters so each swatch can render as a realistic, layered marble
- *     tile rather than a flat fill.
+ * Color + image notes:
+ *   - `mockupImage` points at a real client-supplied slab photograph stored
+ *     locally under `public/finishes/`.
+ *   - `swatch` values are sampled from those photos. They are expressed as a
+ *     base/mid/vein/highlight set so each swatch renders as a realistic,
+ *     layered marble tile rather than a flat fill.
  *   - When a finish has not yet been supplied with exact color data, set
  *     `swatch` to `null` and set `isPlaceholder` to `true`. The UI will render
  *     a neutral "color coming soon" state instead of guessing.
@@ -66,15 +66,14 @@ export const porcelainFinishes: PorcelainFinish[] = [
     finishType: "Polished",
     category: "Statuario Marble",
     swatch: {
-      base: "#ECECEA",
-      mid: "#D8D8D6",
-      vein: "#6F6F74",
+      base: "#F1F0ED",
+      mid: "#DFDEDB",
+      vein: "#6E6E72",
       highlight: "#FFFFFF",
     },
-    mockupImage:
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1200&auto=format&fit=crop",
+    mockupImage: "/finishes/statuario-leonardo.jpg",
     mockupAlt:
-      "Luxury walk-in shower with Statuario Leonardo white marble porcelain walls and dramatic grey veining",
+      "Statuario Leonardo porcelain slab — bright white with bold charcoal veining",
     application: "Walk-in Shower",
     featured: true,
   },
@@ -88,15 +87,14 @@ export const porcelainFinishes: PorcelainFinish[] = [
     finishType: "Polished",
     category: "Calacatta Marble",
     swatch: {
-      base: "#F2EAD7",
-      mid: "#E8DCC0",
-      vein: "#B9965A",
-      highlight: "#FBF6EA",
+      base: "#F4EEDE",
+      mid: "#E7DCC1",
+      vein: "#B08A4C",
+      highlight: "#FBF6E8",
     },
-    mockupImage:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop",
+    mockupImage: "/finishes/calacatta-oro.jpg",
     mockupAlt:
-      "Premium vanity finished in Calacatta Oro porcelain with warm gold veining",
+      "Calacatta Oro porcelain slab — creamy white with warm gold and soft grey veining",
     application: "Vanity & Surround",
     featured: true,
   },
@@ -110,15 +108,14 @@ export const porcelainFinishes: PorcelainFinish[] = [
     finishType: "Matte",
     category: "Limestone",
     swatch: {
-      base: "#E6D6B5",
-      mid: "#D4C29A",
-      vein: "#A88A5A",
-      highlight: "#F1E4C8",
+      base: "#E6D9B9",
+      mid: "#D6C59F",
+      vein: "#A58A5E",
+      highlight: "#F0E5C9",
     },
-    mockupImage:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop",
+    mockupImage: "/finishes/lims-ivory.jpg",
     mockupAlt:
-      "Spa bathroom finished in Lims Ivory porcelain with a warm sand-toned matte surface",
+      "Lims Ivory porcelain slab — warm ivory limestone with a soft matte sand texture",
     application: "Full Bathroom",
     featured: true,
   },
@@ -132,15 +129,14 @@ export const porcelainFinishes: PorcelainFinish[] = [
     finishType: "Polished",
     category: "Alabaster",
     swatch: {
-      base: "#F1EFEB",
-      mid: "#E3E1DC",
-      vein: "#B9BEC4",
-      highlight: "#FBFAF7",
+      base: "#E9ECEE",
+      mid: "#D4D8DB",
+      vein: "#9AA2AA",
+      highlight: "#F8FAFB",
     },
-    mockupImage:
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1200&auto=format&fit=crop&sat=-40&bri=5",
+    mockupImage: "/finishes/onyx-white-alabaster.jpg",
     mockupAlt:
-      "Luxurious feature wall finished in Onyx White Alabaster porcelain with a crystalline cool-white sheen",
+      "Onyx White Alabaster porcelain slab — icy cool white with translucent crystalline banding",
     application: "Feature Wall",
     featured: true,
   },
