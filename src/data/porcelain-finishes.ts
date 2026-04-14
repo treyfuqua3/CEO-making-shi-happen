@@ -4,12 +4,12 @@
  * This file is the single source of truth for every porcelain finish rendered
  * on the site. To add a new finish, append an entry to `porcelainFinishes`.
  *
- * Color notes:
- *   - `swatch` values are derived directly from the product photography the
- *     client provided for Statuario Leonardo, Calacatta Oro and Avorio
- *     Limestone. They are intentionally expressed as multi-stop gradient
- *     parameters so each swatch can render as a realistic, layered marble
- *     tile rather than a flat fill.
+ * Color + image notes:
+ *   - `mockupImage` points at a real client-supplied slab photograph stored
+ *     locally under `public/finishes/`.
+ *   - `swatch` values are sampled from those photos. They are expressed as a
+ *     base/mid/vein/highlight set so each swatch renders as a realistic,
+ *     layered marble tile rather than a flat fill.
  *   - When a finish has not yet been supplied with exact color data, set
  *     `swatch` to `null` and set `isPlaceholder` to `true`. The UI will render
  *     a neutral "color coming soon" state instead of guessing.
@@ -22,6 +22,7 @@ export type FinishCategory =
   | "Calacatta Marble"
   | "Limestone"
   | "Onyx"
+  | "Alabaster"
   | "Custom"
 
 export type FinishSwatch = {
@@ -65,15 +66,14 @@ export const porcelainFinishes: PorcelainFinish[] = [
     finishType: "Polished",
     category: "Statuario Marble",
     swatch: {
-      base: "#ECECEA",
-      mid: "#D8D8D6",
-      vein: "#6F6F74",
+      base: "#F1F0ED",
+      mid: "#DFDEDB",
+      vein: "#6E6E72",
       highlight: "#FFFFFF",
     },
-    mockupImage:
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1200&auto=format&fit=crop",
+    mockupImage: "/finishes/statuario-leonardo.jpg",
     mockupAlt:
-      "Luxury walk-in shower with Statuario Leonardo white marble porcelain walls and dramatic grey veining",
+      "Statuario Leonardo porcelain slab — bright white with bold charcoal veining",
     application: "Walk-in Shower",
     featured: true,
   },
@@ -87,55 +87,57 @@ export const porcelainFinishes: PorcelainFinish[] = [
     finishType: "Polished",
     category: "Calacatta Marble",
     swatch: {
-      base: "#F2EAD7",
-      mid: "#E8DCC0",
-      vein: "#B9965A",
-      highlight: "#FBF6EA",
+      base: "#F4EEDE",
+      mid: "#E7DCC1",
+      vein: "#B08A4C",
+      highlight: "#FBF6E8",
     },
-    mockupImage:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop",
+    mockupImage: "/finishes/calacatta-oro.jpg",
     mockupAlt:
-      "Premium vanity finished in Calacatta Oro porcelain with warm gold veining",
+      "Calacatta Oro porcelain slab — creamy white with warm gold and soft grey veining",
     application: "Vanity & Surround",
     featured: true,
   },
   {
-    id: "avorio-limestone",
-    name: "Avorio Limestone",
-    shortName: "Avorio",
-    tagline: "Warm ivory limestone with a soft matte touch",
+    id: "lims-ivory",
+    name: "Lims Ivory",
+    shortName: "Lims",
+    tagline: "Warm ivory limestone with a soft sand texture",
     description:
-      "Textured ivory porcelain that reads as quarried limestone. Its uniform warm tone and matte surface create a calm, spa-like envelope for full bathroom installations.",
+      "A quarry-inspired porcelain in a warm ivory tone reading as natural limestone. Subtle organic texture and a sand-kissed surface create a calm, spa-like envelope that pairs beautifully with natural woods and brushed metals.",
     finishType: "Matte",
     category: "Limestone",
     swatch: {
-      base: "#DDC9A1",
-      mid: "#CAB489",
-      vein: "#9E8555",
-      highlight: "#EADBB8",
+      base: "#E6D9B9",
+      mid: "#D6C59F",
+      vein: "#A58A5E",
+      highlight: "#F0E5C9",
     },
-    mockupImage:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop",
+    mockupImage: "/finishes/lims-ivory.jpg",
     mockupAlt:
-      "Spa bathroom with Avorio Limestone porcelain walls in a warm ivory matte finish",
+      "Lims Ivory porcelain slab — warm ivory limestone with a soft matte sand texture",
     application: "Full Bathroom",
     featured: true,
   },
   {
-    id: "custom-finish-placeholder",
-    name: "Additional Finish",
-    shortName: "Coming Soon",
-    tagline: "Fourth designer finish — colorway to be confirmed",
+    id: "onyx-white-alabaster",
+    name: "Onyx White Alabaster",
+    shortName: "Alabaster",
+    tagline: "Soft icy white with translucent crystalline movement",
     description:
-      "An additional TRUbath designer colorway is part of the product line. Exact color data for this finish has not been supplied yet — get in touch to confirm availability and specification.",
-    finishType: "Custom",
-    category: "Custom",
-    swatch: null,
-    mockupImage:
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop",
+      "A luminous alabaster-inspired porcelain with delicate cool-white veining and a crystalline sheen. Reads almost translucent in natural light, bringing a refined, jewel-like quality to feature walls, vanities, and walk-in showers.",
+    finishType: "Polished",
+    category: "Alabaster",
+    swatch: {
+      base: "#E9ECEE",
+      mid: "#D4D8DB",
+      vein: "#9AA2AA",
+      highlight: "#F8FAFB",
+    },
+    mockupImage: "/finishes/onyx-white-alabaster.jpg",
     mockupAlt:
-      "Minimal modern bathroom placeholder — exact finish to be confirmed",
-    application: "Request Sample",
-    isPlaceholder: true,
+      "Onyx White Alabaster porcelain slab — icy cool white with translucent crystalline banding",
+    application: "Feature Wall",
+    featured: true,
   },
 ]
