@@ -16,48 +16,42 @@ const trubathProducts = [
     description:
       "Patented 16mm porcelain wall panel system with MightySlab technology. 3-wall configuration with 36\" side panels and 63\" back panel at 96\" height. Available in every designer finish — Polished and Matte.",
     specs: ["36\" x 96\" side panels", "63\" x 96\" back panel", "16mm thick porcelain"],
-    image:
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1000&auto=format&fit=crop",
+    image: "/finishes/statuario-leonardo.jpg",
   },
   {
     name: "TRUwall Ledge Wall",
     description:
       "Full wall coverage system with upper and lower panels plus ledge detail. Panels at 63\" wide with 36\" side returns, 96\" total height. Creates a seamless, built-in look with an integrated shelf ledge.",
     specs: ["63\" x 96\" panels", "Built-in ledge detail", "5/8\" ledge depth"],
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1000&auto=format&fit=crop",
+    image: "/finishes/calacatta-oro.jpg",
   },
   {
     name: "TRUpan Shower Base",
     description:
       "Porcelain shower base in standard 59¾\" x 32\" size. Available with left, right, or center drain options. Custom sizes available. Matte finish for a coordinated, slip-resistant surface.",
     specs: ["59¾\" x 32\" standard", "Left/Right/Center drain", "Custom sizes available"],
-    image:
-      "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=1000&auto=format&fit=crop",
+    image: "/finishes/lims-ivory.jpg",
   },
   {
     name: "TRUtops Vanities & Sinks",
     description:
       "Porcelain vanity tops custom fabricated in every finish. Multiple sink options available: integrated, undermount, and vessel — matched to your selected colorway.",
     specs: ["Integrated sink option", "Undermount sink option", "Vessel sink option"],
-    image:
-      "https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?q=80&w=1000&auto=format&fit=crop",
+    image: "/finishes/onyx-white-alabaster.jpg",
   },
   {
     name: "TRUniche Shelves & Storage",
     description:
       "Matching linear shelves and recessed niches that integrate perfectly with TRUwall panels. Color-matched to your wall panels for a seamless, built-in look.",
     specs: ["Color-matched porcelain", "Recessed installation", "Multiple sizes"],
-    image:
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop",
+    image: "/finishes/calacatta-oro.jpg",
   },
   {
     name: "TRUfloor Tiles",
     description:
       "Full slab porcelain floor sections at 126\" x 63\". Coordinating floor coverage that matches your TRUwall panels for a complete, cohesive bathroom from wall to floor.",
     specs: ["126\" x 63\" full slabs", "All designer finishes", "Polished & Matte finishes"],
-    image:
-      "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?q=80&w=1000&auto=format&fit=crop",
+    image: "/finishes/statuario-leonardo.jpg",
   },
 ]
 
@@ -184,35 +178,55 @@ export default function ProductsPage() {
               to match your bathroom design.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
                 color: "Statuario Leonardo",
                 sink: "Integrated Sink",
                 desc: "Built-in basin with dramatic grey-veined polished surface.",
+                image: "/finishes/statuario-leonardo.jpg",
               },
               {
                 color: "Calacatta Oro",
                 sink: "Vessel Sink",
                 desc: "Raised vessel basin with elegant gold-veined polished surface.",
+                image: "/finishes/calacatta-oro.jpg",
               },
               {
-                color: "Avorio Limestone",
+                color: "Lims Ivory",
                 sink: "Undermount Sink",
                 desc: "Clean undermount cutout with warm ivory matte finish.",
+                image: "/finishes/lims-ivory.jpg",
+              },
+              {
+                color: "Onyx White Alabaster",
+                sink: "Vessel Sink",
+                desc: "Luminous vessel basin that showcases the crystalline cool-white surface as a jewel-like feature.",
+                image: "/finishes/onyx-white-alabaster.jpg",
               },
             ].map((item) => (
               <div
                 key={item.color}
-                className="bg-ivory rounded-3xl p-8 text-center hover:shadow-luxury transition-all duration-500 hover:-translate-y-1 ring-1 ring-stone-200/80"
+                className="bg-ivory rounded-3xl overflow-hidden text-center hover:shadow-luxury transition-all duration-500 hover:-translate-y-1 ring-1 ring-stone-200/80"
               >
-                <p className="eyebrow text-stone-500 mb-2">{item.color}</p>
-                <p className="font-display text-2xl text-stone-900 mb-3">
-                  {item.sink}
-                </p>
-                <p className="text-sm text-stone-600 leading-relaxed">
-                  {item.desc}
-                </p>
+                <div className="aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={`${item.color} porcelain slab finish`}
+                    width={600}
+                    height={450}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-7">
+                  <p className="eyebrow text-stone-500 mb-2">{item.color}</p>
+                  <p className="font-display text-xl text-stone-900 mb-3">
+                    {item.sink}
+                  </p>
+                  <p className="text-sm text-stone-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

@@ -159,8 +159,8 @@ export default function Home() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-[32px] shadow-luxury-lg ring-1 ring-stone-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1200&auto=format&fit=crop"
-                  alt="Modern porcelain bathroom showcasing TRUbath materials"
+                  src="/finishes/statuario-leonardo.jpg"
+                  alt="TRUbath Statuario Leonardo porcelain slab — bright white with bold charcoal veining"
                   width={700}
                   height={900}
                   className="object-cover w-full h-[480px] md:h-[600px]"
@@ -207,22 +207,22 @@ export default function Home() {
               {
                 name: "TRUpan Shower Base",
                 desc: "59¾\" x 32\" porcelain base with left, right, or center drain options",
-                img: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=600&auto=format&fit=crop",
+                img: "/finishes/lims-ivory.jpg",
               },
               {
                 name: "TRUniche Shelves & Storage",
                 desc: "Color-matched recessed niches and linear shelves",
-                img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop",
+                img: "/finishes/calacatta-oro.jpg",
               },
               {
                 name: "TRUtops Vanities & Sinks",
                 desc: "Integrated, undermount, or vessel sink options in all finishes",
-                img: "https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?q=80&w=600&auto=format&fit=crop",
+                img: "/finishes/onyx-white-alabaster.jpg",
               },
               {
                 name: "TRUfloor Full Slabs",
                 desc: "126\" x 63\" porcelain floor slabs in all designer finishes",
-                img: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?q=80&w=600&auto=format&fit=crop",
+                img: "/finishes/statuario-leonardo.jpg",
               },
             ].map((product) => (
               <div
