@@ -12,6 +12,7 @@ import {
 } from "lucide-react"
 import { LandingHero } from "@/components/landing-hero"
 import { PorcelainFinishes } from "@/components/porcelain-finishes"
+import { RecentWork } from "@/components/RecentWork"
 
 const valueProps = [
   {
@@ -129,7 +130,7 @@ export default function Home() {
                 Fuqua Finishes LLC proudly supplies TRUbath &mdash; a patented
                 16mm porcelain wall panel system engineered for faster
                 installation, easier handling, and exceptional durability.
-                Beautiful, durable bathrooms installed in about a day.
+                Beautiful, durable bathrooms installed in two to three days.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
                 {trubathFeatures.map((feature) => (
@@ -184,6 +185,9 @@ export default function Home() {
         heading="The Finishes"
         subheading="Designer porcelain colorways available across the full TRUbath system — compare each finish in an authentic bathroom application."
       />
+
+      {/* Recent Work — completed Houston installations */}
+      <RecentWork />
 
       {/* Complete System Section */}
       <section className="py-20 md:py-28 bg-white">
