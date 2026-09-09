@@ -23,6 +23,11 @@ const projects = [
       { label: "Scope", value: "Walls, pan, floor" },
       { label: "Install", value: "2–3 days" },
     ],
+    gallery: [
+      { src: "/co-g1.jpg", alt: "Recessed niche cut from the same porcelain run as the surrounding wall." },
+      { src: "/co-g2.jpg", alt: "Brushed brass rain head, handheld and valve against Calacatta Oro porcelain." },
+      { src: "/co-g3.jpg", alt: "Large-format porcelain floor tile running out from the shower." },
+    ],
   },
   {
     id: "lims-ivory",
@@ -41,6 +46,11 @@ const projects = [
       { label: "Finish", value: "Lims Ivory" },
       { label: "Scope", value: "Tub to walk-in shower" },
       { label: "Install", value: "2–3 days" },
+    ],
+    gallery: [
+      { src: "/li-g1.jpg", alt: "Rain head and handheld above a full-width porcelain ledge shelf." },
+      { src: "/li-g2.jpg", alt: "Corner joint where two ivory porcelain panels meet at the ledge." },
+      { src: "/li-g3.jpg", alt: "Shower curb and pan meeting the bathroom floor in matching porcelain." },
     ],
   },
 ]
@@ -81,7 +91,7 @@ const steps = [
 ]
 
 function Compare({ before, after, beforeAlt, afterAlt }) {
-  const [split, setSplit] = useState(52)
+  const [split, setSplit] = useState(18)
   const frame = useRef(null)
   const dragging = useRef(false)
 
@@ -155,6 +165,9 @@ function Compare({ before, after, beforeAlt, afterAlt }) {
       <span className="pointer-events-none absolute bottom-5 left-5 rounded-full bg-stone-900/70 px-4 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
         Before
       </span>
+      <span className="pointer-events-none absolute top-5 left-1/2 -translate-x-1/2 rounded-full bg-white/85 px-4 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-stone-700 shadow-luxury backdrop-blur-sm">
+        Drag to compare
+      </span>
       <span className="pointer-events-none absolute bottom-5 right-5 rounded-full bg-stone-900/70 px-4 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
         After
       </span>
@@ -189,16 +202,14 @@ export function RecentWork() {
             </h2>
             <p className="mt-6 text-balance text-base md:text-lg text-stone-600 leading-relaxed">
               Two bathrooms in one home, finished in different colorways from the
-              same system. Drag either image to see what changed.
+              same system. Drag either image back to see what we started with.
             </p>
           </div>
 
           <div className="space-y-20 md:space-y-28">
             {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center"
-              >
+              <div key={project.id}>
+                <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div className={index % 2 === 1 ? "md:order-2" : undefined}>
                   <Compare
                     before={project.before}
@@ -231,8 +242,25 @@ export function RecentWork() {
                         </dd>
                       </div>
                     ))}
-                  </dl>
+                    </dl>
+                  </div>
                 </div>
+
+                <ul className="grid grid-cols-3 gap-3 sm:gap-5 md:gap-6 mt-10 md:mt-14">
+                  {project.gallery.map((shot) => (
+                    <li
+                      key={shot.src}
+                      className="group rounded-[20px] overflow-hidden ring-1 ring-stone-200/80"
+                    >
+                      <img
+                        src={shot.src}
+                        alt={shot.alt}
+                        loading="lazy"
+                        className="w-full aspect-square object-cover group-hover:scale-[1.06] transition-transform duration-[1200ms] ease-out"
+                      />
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
