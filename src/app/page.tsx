@@ -12,7 +12,7 @@ import {
 } from "lucide-react"
 import { LandingHero } from "@/components/landing-hero"
 import { PorcelainFinishes } from "@/components/porcelain-finishes"
-import { RecentWork } from "../../components/RecentWork"
+import { RecentWork } from "../../componets/components/components/src/RecentWork"
 
 const valueProps = [
   {
