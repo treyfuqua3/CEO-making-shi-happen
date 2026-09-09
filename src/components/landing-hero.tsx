@@ -8,24 +8,24 @@ import { Phone } from "lucide-react"
 
 const heroImages = [
   {
-    url: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=800&auto=format&fit=crop",
-    alt: "Modern bathroom with marble walls",
+    url: "/hero-1.jpg",
+    alt: "Eased edge on a porcelain ledge wall cap",
   },
   {
-    url: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop",
-    alt: "Luxury bathroom vanity",
+    url: "/hero-2.jpg",
+    alt: "Porcelain shower pan with square center drain and curb",
   },
   {
-    url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
-    alt: "Beautiful home interior",
+    url: "/hero-3.jpg",
+    alt: "Completed Calacatta Oro shower with frameless glass and recessed niche",
   },
   {
-    url: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop",
-    alt: "Modern home finishes",
+    url: "/hero-4.jpg",
+    alt: "Detail of a porcelain curb meeting the bathroom floor",
   },
   {
-    url: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=800&auto=format&fit=crop",
-    alt: "Porcelain bathroom design",
+    url: "/hero-5.jpg",
+    alt: "Statuario porcelain shower walls running continuously into the pan",
   },
 ]
 
