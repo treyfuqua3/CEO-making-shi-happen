@@ -80,7 +80,7 @@ const trubathProducts = [
     description:
       "Porcelain window trim with a finished return edge, sized to wrap a standard shower window opening and carry the wall finish through to the jamb.",
     specs: ["1\" x 5\" x 63\"", "Finished return edge", "All four finishes"],
-    image: "/trim-window-statuario.jpg",
+    image: "/truledge-avorio.jpg",
     fit: "contain",
   },
   {
@@ -88,7 +88,7 @@ const trubathProducts = [
     description:
       "Flat porcelain ledge profile for sills, caps, and shelf runs. Color-matched to the wall panels in every designer finish.",
     specs: ["Flat ledge profile", "Color-matched porcelain", "All four finishes"],
-    image: "/truledge-avorio.jpg",
+    image: "/trim-window-statuario.jpg",
     fit: "contain",
   },
   {
