@@ -66,13 +66,13 @@ const trubathFeatures = [
 
 const systemComponents = [
   {
-    name: "TRUwall Custom Configuration",
+    name: "TRÜwall Custom Configuration",
     desc: "Two 48\" x 96\" back panels with a narrow open gap",
     img: "/truwall-config-statuario.jpg",
     fit: "contain",
   },
   {
-    name: "TRUpan Shower Base",
+    name: "TRÜpan Shower Base",
     desc: "59¾\" x 32\" porcelain base with left, right, or center drain options",
     img: "/finishes/lims-ivory.jpg",
     fit: "cover",
@@ -84,7 +84,7 @@ const systemComponents = [
     fit: "contain",
   },
   {
-    name: "TRUniche Recessed Niche",
+    name: "TRÜniche Recessed Niche",
     desc: "14\" x 22\" recessed niche with a color-matched shelf",
     img: "/niche-avorio.jpg",
     fit: "contain",
@@ -96,25 +96,25 @@ const systemComponents = [
     fit: "contain",
   },
   {
-    name: "TRUtrim Window",
+    name: "TRÜtrim Window",
     desc: "1\" x 5\" x 63\" window trim with a finished return edge",
     img: "/truledge-statuario.jpg",
     fit: "contain",
   },
   {
-    name: "TRUtrim TRUledge",
+    name: "TRÜtrim TRÜledge",
     desc: "Flat ledge profile for sills, caps, and shelf runs",
     img: "/trim-window-statuario.jpg",
     fit: "contain",
   },
   {
-    name: "TRUtops Vanities & Sinks",
+    name: "TRÜtops Vanities & Sinks",
     desc: "Integrated, undermount, or vessel sink options in all finishes",
     img: "/finishes/onyx-white-alabaster.jpg",
     fit: "cover",
   },
   {
-    name: "TRUfloor Full Slabs",
+    name: "TRÜfloor Full Slabs",
     desc: "126\" x 63\" porcelain floor slabs in all designer finishes",
     img: "/finishes/statuario-leonardo.jpg",
     fit: "cover",
@@ -165,7 +165,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUbath Featured Section */}
+      {/* TRÜbath Featured Section */}
       <section className="relative py-20 md:py-28 bg-stone-50 overflow-hidden">
         <div
           className="pointer-events-none absolute inset-0 bg-luxury-radial"
@@ -181,10 +181,10 @@ export default function Home() {
                 </span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-stone-900 leading-[1.05] mb-6">
-                TRUbath Porcelain Systems
+                TRÜbath Porcelain Systems
               </h2>
               <p className="text-stone-600 mb-10 leading-relaxed md:text-lg">
-                Fuqua Finishes LLC proudly supplies TRUbath &mdash; a patented
+                Fuqua Finishes LLC proudly supplies TRÜbath &mdash; a patented
                 16mm porcelain wall panel system engineered for faster
                 installation, easier handling, and exceptional durability.
                 Beautiful, durable bathrooms installed in two to three days.
@@ -218,7 +218,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-[32px] shadow-luxury-lg ring-1 ring-stone-200">
                 <Image
                   src="/finishes/statuario-leonardo.jpg"
-                  alt="TRUbath Statuario Leonardo porcelain slab — bright white with bold charcoal veining"
+                  alt="TRÜbath Statuario Leonardo porcelain slab — bright white with bold charcoal veining"
                   width={700}
                   height={900}
                   className="object-cover w-full h-[480px] md:h-[600px]"
@@ -240,7 +240,7 @@ export default function Home() {
       <PorcelainFinishes
         eyebrow="Porcelain Collection"
         heading="The Finishes"
-        subheading="Designer porcelain colorways available across the full TRUbath system — compare each finish in an authentic bathroom application."
+        subheading="Designer porcelain colorways available across the full TRÜbath system — compare each finish in an authentic bathroom application."
       />
 
       {/* Recent Work — completed Houston installations */}
@@ -259,7 +259,7 @@ export default function Home() {
               Wall to floor, perfectly coordinated.
             </h2>
             <p className="mt-6 text-balance text-base md:text-lg text-stone-600 leading-relaxed">
-              Complete the look with matching TRUbath components &mdash;
+              Complete the look with matching TRÜbath components &mdash;
               available through Fuqua Finishes LLC in every designer finish.
             </p>
           </div>
@@ -317,7 +317,7 @@ export default function Home() {
             Ready to begin?
           </h2>
           <p className="text-stone-300 mb-10 max-w-xl mx-auto leading-relaxed md:text-lg">
-            Get in touch with Fuqua Finishes LLC for a quote on premium TRUbath
+            Get in touch with Fuqua Finishes LLC for a quote on premium TRÜbath
             materials and building finishes for your Houston area project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
