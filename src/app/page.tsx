@@ -64,6 +64,63 @@ const trubathFeatures = [
   },
 ]
 
+const systemComponents = [
+  {
+    name: "TRUwall Custom Configuration",
+    desc: "Two 48\" x 96\" back panels with a narrow open gap",
+    img: "/truwall-config-statuario.jpg",
+    fit: "contain",
+  },
+  {
+    name: "TRUpan Shower Base",
+    desc: "59¾\" x 32\" porcelain base with left, right, or center drain options",
+    img: "/finishes/lims-ivory.jpg",
+    fit: "cover",
+  },
+  {
+    name: "FloFX Tile-In Drain",
+    desc: "Tile-in drain in matte black, set flush with the shower base",
+    img: "/flofx-drain-black.jpg",
+    fit: "contain",
+  },
+  {
+    name: "TRUniche Recessed Niche",
+    desc: "14\" x 22\" recessed niche with a color-matched shelf",
+    img: "/niche-avorio.jpg",
+    fit: "contain",
+  },
+  {
+    name: "Custom Bench",
+    desc: "Solid porcelain shower bench, color-matched to the wall panels",
+    img: "/bench-statuario.jpg",
+    fit: "contain",
+  },
+  {
+    name: "TRUtrim Window",
+    desc: "1\" x 5\" x 63\" window trim with a finished return edge",
+    img: "/truledge-statuario.jpg",
+    fit: "contain",
+  },
+  {
+    name: "TRUtrim TRUledge",
+    desc: "Flat ledge profile for sills, caps, and shelf runs",
+    img: "/trim-window-statuario.jpg",
+    fit: "contain",
+  },
+  {
+    name: "TRUtops Vanities & Sinks",
+    desc: "Integrated, undermount, or vessel sink options in all finishes",
+    img: "/finishes/onyx-white-alabaster.jpg",
+    fit: "cover",
+  },
+  {
+    name: "TRUfloor Full Slabs",
+    desc: "126\" x 63\" porcelain floor slabs in all designer finishes",
+    img: "/finishes/statuario-leonardo.jpg",
+    fit: "cover",
+  },
+]
+
 export default function Home() {
   return (
     <main>
@@ -206,40 +263,23 @@ export default function Home() {
               available through Fuqua Finishes LLC in every designer finish.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {[
-              {
-                name: "TRUpan Shower Base",
-                desc: "59¾\" x 32\" porcelain base with left, right, or center drain options",
-                img: "/finishes/lims-ivory.jpg",
-              },
-              {
-                name: "TRUniche Shelves & Storage",
-                desc: "Color-matched recessed niches and linear shelves",
-                img: "/finishes/calacatta-oro.jpg",
-              },
-              {
-                name: "TRUtops Vanities & Sinks",
-                desc: "Integrated, undermount, or vessel sink options in all finishes",
-                img: "/finishes/onyx-white-alabaster.jpg",
-              },
-              {
-                name: "TRUfloor Full Slabs",
-                desc: "126\" x 63\" porcelain floor slabs in all designer finishes",
-                img: "/finishes/statuario-leonardo.jpg",
-              },
-            ].map((product) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {systemComponents.map((product) => (
               <div
                 key={product.name}
                 className="group rounded-[24px] overflow-hidden bg-ivory ring-1 ring-stone-200/80 hover:shadow-luxury transition-all duration-500 hover:-translate-y-1"
               >
-                <div className="aspect-[4/5] overflow-hidden">
+                <div className="aspect-square overflow-hidden bg-white">
                   <Image
                     src={product.img}
                     alt={product.name}
-                    width={600}
+                    width={750}
                     height={750}
-                    className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-[1200ms] ease-out"
+                    className={`w-full h-full transition-transform duration-[1200ms] ease-out ${
+                      product.fit === "contain"
+                        ? "object-contain p-6 group-hover:scale-[1.04]"
+                        : "object-cover group-hover:scale-[1.06]"
+                    }`}
                   />
                 </div>
                 <div className="p-6">
@@ -253,6 +293,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
