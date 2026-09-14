@@ -164,7 +164,7 @@ export function LandingHero() {
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.5 }}
         >
           Fuqua Finishes LLC is Houston&apos;s trusted source for architectural
-          building materials &mdash; featuring TRUbath porcelain systems and a
+          building materials &mdash; featuring TRÜbath porcelain systems and a
           curated collection of designer finishes.
         </motion.p>
 
