@@ -104,13 +104,14 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="overflow-hidden rounded-[32px] shadow-luxury-lg ring-1 ring-stone-200">
+              {/* SWAP POINT 1 — change src to any photo in public/ */}
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] shadow-luxury-lg ring-1 ring-stone-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"
-                  alt="Modern home showcasing quality finishes"
-                  width={800}
-                  height={1000}
-                  className="object-cover w-full h-[500px] md:h-[640px]"
+                  src="/hero-1.jpg"
+                  alt="Completed Houston bathroom installation by Fuqua Finishes LLC"
+                  width={900}
+                  height={1125}
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
             </div>
@@ -157,13 +158,14 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 md:order-1">
-              <div className="overflow-hidden rounded-[32px] shadow-luxury-lg ring-1 ring-stone-200">
+              {/* SWAP POINT 2 — change src to any photo in public/ */}
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] shadow-luxury-lg ring-1 ring-stone-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop"
-                  alt="Premium bathroom with TRUbath materials"
-                  width={800}
-                  height={1000}
-                  className="object-cover w-full h-[500px] md:h-[640px]"
+                  src="/co-g1.jpg"
+                  alt="TRUbath porcelain bathroom supplied by Fuqua Finishes LLC"
+                  width={900}
+                  height={1125}
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
             </div>
