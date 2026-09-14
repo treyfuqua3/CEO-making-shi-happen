@@ -13,6 +13,9 @@
  *   - When a finish has not yet been supplied with exact color data, set
  *     `swatch` to `null` and set `isPlaceholder` to `true`. The UI will render
  *     a neutral "color coming soon" state instead of guessing.
+ *   - `id` and `mockupImage` for Avorio Limestone still read `lims-ivory`.
+ *     That was the finish's former name; the paths were left alone so the
+ *     existing image file keeps resolving.
  */
 
 export type FinishType = "Polished" | "Matte" | "Custom"
@@ -100,9 +103,9 @@ export const porcelainFinishes: PorcelainFinish[] = [
   },
   {
     id: "lims-ivory",
-    name: "Lims Ivory",
-    shortName: "Lims",
-    tagline: "Warm ivory limestone with a soft sand texture",
+    name: "Avorio Limestone",
+    shortName: "Avorio",
+    tagline: "Warm ivory tone with a soft sand texture",
     description:
       "A quarry-inspired porcelain in a warm ivory tone reading as natural limestone. Subtle organic texture and a sand-kissed surface create a calm, spa-like envelope that pairs beautifully with natural woods and brushed metals.",
     finishType: "Matte",
@@ -115,7 +118,7 @@ export const porcelainFinishes: PorcelainFinish[] = [
     },
     mockupImage: "/finishes/lims-ivory.jpg",
     mockupAlt:
-      "Lims Ivory porcelain slab — warm ivory limestone with a soft matte sand texture",
+      "Avorio Limestone porcelain slab — warm ivory tone with a soft matte sand texture",
     application: "Full Bathroom",
     featured: true,
   },
