@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const trubathProducts = [
   {
-    name: "TRUwall 3-Wall Shower Kits",
+    name: "TRÜwall 3-Wall Shower Kits",
     description:
       "Patented 16mm porcelain wall panel system with MightySlab technology. 3-wall configuration with 36\" side panels and 63\" back panel at 96\" height. Available in every designer finish — Polished and Matte.",
     specs: ["36\" x 96\" side panels", "63\" x 96\" back panel", "16mm thick porcelain"],
@@ -20,7 +20,7 @@ const trubathProducts = [
     fit: "cover",
   },
   {
-    name: "TRUwall Ledge Wall",
+    name: "TRÜwall Ledge Wall",
     description:
       "Full wall coverage system with upper and lower panels plus ledge detail. Panels at 63\" wide with 36\" side returns, 96\" total height. Creates a seamless, built-in look with an integrated shelf ledge.",
     specs: ["63\" x 96\" panels", "Built-in ledge detail", "5/8\" ledge depth"],
@@ -28,7 +28,7 @@ const trubathProducts = [
     fit: "cover",
   },
   {
-    name: "TRUwall Custom Configuration",
+    name: "TRÜwall Custom Configuration",
     description:
       "A two-panel back wall layout with a narrow open gap between the panels, built from the same 16mm porcelain as the standard kits. Available in all four designer finishes.",
     specs: ["Two 48\" x 96\" back panels", "Narrow open gap detail", "All four finishes"],
@@ -36,7 +36,7 @@ const trubathProducts = [
     fit: "contain",
   },
   {
-    name: "TRUpan Shower Base",
+    name: "TRÜpan Shower Base",
     description:
       "Porcelain shower base in standard 59¾\" x 32\" size. Available with left, right, or center drain options. Custom sizes available. Matte finish for a coordinated, slip-resistant surface.",
     specs: ["59¾\" x 32\" standard", "Left/Right/Center drain", "Custom sizes available"],
@@ -52,7 +52,7 @@ const trubathProducts = [
     fit: "contain",
   },
   {
-    name: "TRUtops Vanities & Sinks",
+    name: "TRÜtops Vanities & Sinks",
     description:
       "Porcelain vanity tops custom fabricated in every finish. Multiple sink options available: integrated, undermount, and vessel — matched to your selected colorway.",
     specs: ["Integrated sink option", "Undermount sink option", "Vessel sink option"],
@@ -60,9 +60,9 @@ const trubathProducts = [
     fit: "cover",
   },
   {
-    name: "TRUniche Shelves & Storage",
+    name: "TRÜniche Shelves & Storage",
     description:
-      "Matching linear shelves and recessed niches that integrate perfectly with TRUwall panels. Color-matched to your wall panels for a seamless, built-in look.",
+      "Matching linear shelves and recessed niches that integrate perfectly with TRÜwall panels. Color-matched to your wall panels for a seamless, built-in look.",
     specs: ["14\" x 22\" recessed niche", "Color-matched shelf", "Recessed installation"],
     image: "/niche-avorio.jpg",
     fit: "contain",
@@ -76,7 +76,7 @@ const trubathProducts = [
     fit: "contain",
   },
   {
-    name: "TRUtrim Window",
+    name: "TRÜtrim Window",
     description:
       "Porcelain window trim with a finished return edge, sized to wrap a standard shower window opening and carry the wall finish through to the jamb.",
     specs: ["1\" x 5\" x 63\"", "Finished return edge", "All four finishes"],
@@ -84,7 +84,7 @@ const trubathProducts = [
     fit: "contain",
   },
   {
-    name: "TRUtrim TRUledge",
+    name: "TRÜtrim TRÜledge",
     description:
       "Flat porcelain ledge profile for sills, caps, and shelf runs. Color-matched to the wall panels in every designer finish.",
     specs: ["Flat ledge profile", "Color-matched porcelain", "All four finishes"],
@@ -92,9 +92,9 @@ const trubathProducts = [
     fit: "contain",
   },
   {
-    name: "TRUfloor Tiles",
+    name: "TRÜfloor Tiles",
     description:
-      "Full slab porcelain floor sections at 126\" x 63\". Coordinating floor coverage that matches your TRUwall panels for a complete, cohesive bathroom from wall to floor.",
+      "Full slab porcelain floor sections at 126\" x 63\". Coordinating floor coverage that matches your TRÜwall panels for a complete, cohesive bathroom from wall to floor.",
     specs: ["126\" x 63\" full slabs", "All designer finishes", "Polished & Matte finishes"],
     image: "/finishes/statuario-leonardo.jpg",
     fit: "cover",
@@ -130,7 +130,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* TRUbath Products */}
+      {/* TRÜbath Products */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-14 md:mb-20">
@@ -139,13 +139,13 @@ export default function ProductsPage() {
               <span className="eyebrow text-stone-500">Partner Brand</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-stone-900 leading-[1.05] mb-6">
-              TRUbath Porcelain Systems
+              TRÜbath Porcelain Systems
             </h2>
             <p className="text-stone-600 leading-relaxed md:text-lg">
-              TRUbath delivers a complete porcelain bathroom experience &mdash;
+              TRÜbath delivers a complete porcelain bathroom experience &mdash;
               large-format panels that install quickly, clean easily, and look
               stunning for years. Fuqua Finishes LLC is your Houston source for the
-              full TRUbath product line.
+              full TRÜbath product line.
             </p>
           </div>
 
@@ -204,7 +204,7 @@ export default function ProductsPage() {
       <PorcelainFinishes
         eyebrow="Color Options"
         heading="Designer Finishes"
-        subheading="Every TRUbath product is available in these designer porcelain colorways. Each card shows the finish in an authentic bathroom application."
+        subheading="Every TRÜbath product is available in these designer porcelain colorways. Each card shows the finish in an authentic bathroom application."
         background="stone"
       />
 
@@ -216,7 +216,7 @@ export default function ProductsPage() {
               <span className="luxury-divider text-stone-400" aria-hidden />
               <span className="eyebrow inline-flex items-center gap-2 text-stone-500">
                 <Droplets className="w-3.5 h-3.5 text-primary" />
-                TRUtops Sink Options
+                TRÜtops Sink Options
               </span>
               <span className="luxury-divider text-stone-400" aria-hidden />
             </div>
